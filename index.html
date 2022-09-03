@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Snake</title>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		#gameover {
+			display: none;
+			text-align: center;
+		}
+
+		#score {
+			font-size: 2rem;
+			font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+		}
+
+		#board {
+			width: 600px;
+			height: 600px;
+			background: lightgray;
+		}
+
+		#head {
+			width: 20px;
+			height: 20px;
+			background: black;
+			position: absolute;
+			border: 1px solid green;
+			box-sizing: border-box;
+			top: 0;
+			left: 0;
+			transition: all 0.5s ease-out;
+		}
+
+		#food {
+			width: 20px;
+			height: 20px;
+			background: lightsalmon;
+			position: absolute;
+			top: 60px;
+			left: 60px;
+		}
+
+		.snake {
+			z-index: 777;
+		}
+
+		@media screen and (max-width: 400px) {
+			#board {
+				width: 380px;
+				height: 380px;
+			}
+
+			#head {
+				width: 10px;
+				height: 10px;
+			}
+
+			#food {
+				width: 10px;
+				height: 10px;
+				top: 30px;
+				left: 30px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="gameover">
+		<p id="score"></p>
+		<img src="https://media.giphy.com/media/dkuZHIQsslFfy/giphy.gif" alt="game over gif">
+	</div>
+	<div id="board">
+		<div id="head" class="snake"></div>
+		<div id="food"></div>
+	</div>
+
+	<script src="./game.js"></script>
+</body>
+
+</html>
